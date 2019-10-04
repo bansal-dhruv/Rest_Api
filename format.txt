@@ -1,0 +1,95 @@
+This file shows how to get the request
+Explaination with links and dictionary format for post request.
+
+
+	Auction/AddBid/    	
+		post request
+		to bid done only Authenticated user/ after login
+		needs:
+		{
+			"title",
+	        "username",
+	        "amount" 
+		}
+
+
+	Auction/register/
+		post request
+		to register as new user 
+		needs:
+		{
+			"first_name",
+			"last_name",
+	        "username",
+	        "email",
+	        "password" 
+		}
+
+
+	Auction/login/
+		post request
+		to login
+		needs:
+		{		
+	        "email",
+	        "password" 
+		}
+
+
+	Auction/logout/
+		post request
+		to logout
+		needs:
+		{		
+	        "email",
+	        "password" 
+		}
+
+
+	Auction/
+		get request and anyone can do that
+		No Authenticatio required.
+
+
+	Auction/<slug:title>/
+		get request
+		Authentication not required.
+		tells status and amount of item="title"
+		gives:
+		{
+			"title",
+	        "description",
+	        "start_date",
+	        "end_date",
+	        "amount",
+	        "username",
+	        "status"
+		}
+
+
+
+	Auction/Bid/<slug:username>/
+		get request
+		Authentication required.
+		Tell All your bids.
+		gives:
+		{	"title",
+	        "username",
+	        "amount",
+	        "status"
+	    }
+
+
+	Auction/add/
+		post request
+		admin can only add auctions
+		needs:
+		{
+			"title",
+	        "description",
+	        "start_date",
+	        "end_date",
+	        "amount",
+	        "username",
+	        "status"
+		}
